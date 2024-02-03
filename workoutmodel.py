@@ -8,8 +8,9 @@ import uuid
 
 
 class Workout:
-    def __init__(self, date, distance, calories_burned, duration, workout_name=None, heart_rate=None, max_elevation=None, route_name=None):
+    def __init__(self, image, date, distance, calories_burned, duration, workout_name=None, heart_rate=None, max_elevation=None, route_name=None):
         self.id = str(uuid.uuid4())
+        self.image = image
         self.workout_name = workout_name
         self.distance = distance
         self.calories_burned = calories_burned
@@ -32,6 +33,7 @@ class Workout:
     def to_dict(self):
         return {
             'id': self.id,
+            'image': self.image,
             'workoutName': self.workout_name,
             'distance': self.distance,
             'caloriesBurned': self.calories_burned,

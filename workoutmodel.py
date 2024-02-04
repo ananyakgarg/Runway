@@ -8,7 +8,7 @@ import uuid
 
 
 class Workout:
-    def __init__(self, image, date, distance, calories_burned, duration, workout_name=None, heart_rate=None, max_elevation=None, route_name=None):
+    def __init__(self,date, distance, calories_burned, duration,  image = None, workout_name=None, heart_rate=None, max_elevation=None, route_name=None):
         self.id = str(uuid.uuid4())
         self.image = image
         self.workout_name = workout_name
@@ -18,7 +18,7 @@ class Workout:
         self.heart_rate = heart_rate
         self.max_elevation = max_elevation
         self.pace = self.calculate_pace()
-        self.date = datetime.strptime(date, '%m-%d-%Y').date()
+        self.date = datetime.strptime(date, '%Y-%m-%d').date()
         self.route_name = route_name
 
 
